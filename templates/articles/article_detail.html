@@ -2,10 +2,14 @@
 
 {% block content %}
 <a href="{% url 'articles:list' %}">View all articles</a>
-<h1 class="font-bold text-3xl">{{ article.title }}</h1>
-<p class="font-semibold">{{ article.date }}</p>
-<span>
-    <img src="{{ article.thumbnail.url }}" alt="">
-</span>
-<p class="pt-3 text-justify font-normal">{{ article.body }}</p>
+
+<div class="py-3">
+    <h1 class="font-bold text-3xl">{{ article.title }}</h1>
+    <p class="font-semibold">{{ article.date }}</p>
+</div>
+
+<div class="flex justify-center">
+    <img class="h-72" src="{{ article.thumbnail.url }}" alt="">
+</div>
+<p class="pt-3 text-justify font-medium text-base">{{ article.body }}</p>
 {% endblock %}
