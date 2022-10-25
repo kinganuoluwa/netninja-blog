@@ -4,6 +4,9 @@
 <div class="articles">
     {% for article in articles %}
     <div class="article border rounded p-5 bg-white">
+        <span>
+            <img src="{{ article.thumbnail.url }}" alt="">
+        </span>
         <h2 class="font-bold text-2xl"><a href="{% url 'articles:detail' article.slug %}">{{ article.title }}</a></h2>
         <p class="font-normal text-lg">{{ article.snippet }}</p>
         <p class="font-medium">{{ article.date.date }}</p>
