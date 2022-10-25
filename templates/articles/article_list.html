@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Article list page</h1>
 <div class="articles">
     {% for article in articles %}
-    <div class="article">
-        <h2><a href="{% url 'articles:detail' article.slug %}">{{ article.title }}</a></h2>
-        <p>{{ article.snippet }}</p>
-        <p>{{ article.date }}</p>
+    <div class="article border rounded p-5 bg-white">
+        <h2 class="font-bold text-2xl"><a href="{% url 'articles:detail' article.slug %}">{{ article.title }}</a></h2>
+        <p class="font-normal text-lg">{{ article.snippet }}</p>
+        <p class="font-medium">{{ article.date.date }}</p>
     </div>
     {% endfor %}
 </div>

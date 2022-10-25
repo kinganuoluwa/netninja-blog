@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{{ article.title }}</h1>
-<p>{{ article.date }}</p>
-<p>{{ article.body }}</p>
+<a href="{% url 'articles:list' %}">View all articles</a>
+<h1 class="font-bold text-3xl">{{ article.title }}</h1>
+<p class="font-semibold">{{ article.date }}</p>
+<p class="pt-3 text-justify font-normal">{{ article.body }}</p>
 {% endblock %}
